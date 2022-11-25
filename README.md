@@ -39,7 +39,7 @@ INSERT INTO `service_type` VALUES (1,'Serviço A'),(2,'Serviço B'),(3,'Serviço
 CREATE TABLE `workplace` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `start_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `start_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `finish_date` timestamp NULL DEFAULT NULL,
   `service_type_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
@@ -54,7 +54,7 @@ CREATE TABLE `person` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `workplace_id` bigint(20) NOT NULL,
-  `admission_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `admission_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `demission_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `workplace_FK` (`workplace_id`),
